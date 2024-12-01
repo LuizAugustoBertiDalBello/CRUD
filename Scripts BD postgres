@@ -1,0 +1,24 @@
+CREATE DATABASE loja_bebidas;
+
+\c loja_bebidas
+
+CREATE TABLE bebidas (
+    id SERIAL PRIMARY KEY,        -- ID único, gerado automaticamente
+    nome VARCHAR(100) NOT NULL,   -- Nome da bebida (ex: Vodka Absolut)
+    tipo VARCHAR(50) NOT NULL,    -- Tipo da bebida (ex: Vodka, Cerveja)
+    preco NUMERIC(10, 2) NOT NULL, -- Preço da bebida com duas casas decimais
+    estoque INTEGER NOT NULL,     -- Quantidade em estoque
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Data de criação
+    atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- Data de última atualização
+);
+
+
+
+Dados para teste a baixo
+
+INSERT INTO bebidas (nome, tipo, preco, estoque) VALUES
+('Vodka Absolut', 'Vodka', 120.00, 50),
+('Cerveja Heineken', 'Cerveja', 6.50, 100),
+('Whisky Jack Daniels', 'Whisky', 200.00, 20),
+('Vinho Tinto Chileno', 'Vinho', 80.00, 30),
+('Tequila José Cuervo', 'Tequila', 150.00, 10);
