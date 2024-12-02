@@ -9,7 +9,7 @@ CREATE TABLE bebidas (
     preco NUMERIC(10, 2) NOT NULL, -- Preço da bebida com duas casas decimais
     estoque INTEGER NOT NULL,     -- Quantidade em estoque
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Data de criação
-    atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- Data de última atualização
+    atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Data de última atualização
 );
 
 
